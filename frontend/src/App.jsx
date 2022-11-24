@@ -1,10 +1,9 @@
-import Hero from "./components/hero/Hero";
-import NavigationBar from "./components/navigationBar/NavigationBar";
+import LandingPage from "./pages/landingPage/LandingPage";
+
 
 function App() {
   return <>
-    <NavigationBar />
-    <Hero />
+    <LandingPage />
   </>;
 }
 
