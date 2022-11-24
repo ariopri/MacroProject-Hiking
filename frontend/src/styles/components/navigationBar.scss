@@ -1,0 +1,28 @@
+#custom-nav {
+    background-color: #FEF9E2;
+    .nav-item {
+        text-transform: uppercase;
+        font-size: 0.8  rem;
+        margin: 0 0.3rem;
+
+        .nav-link {
+            --b: 0.2em; /* the thickness of the line */
+            --c: red; /* the color */
+
+            color: #0000;
+            padding-block: var(--b);
+            background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%)) / 100% 200%,
+                linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b) no-repeat;
+            -webkit-background-clip: text, padding-box;
+            background-clip: text, padding-box;
+            transition: 0.3s var(--_s, 0s) linear, background-size 0.3s calc(0.3s - var(--_s, 0s));
+            &:hover {
+                --_p: 100%;
+                --_s: 0.3s;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        margin-top: -1emx;
+      }
+}
