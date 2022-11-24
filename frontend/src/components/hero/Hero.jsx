@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="banner-text">
                 <h2>Down to Earth, Socially</h2>
                 <p>We were founded on the idea that nature should connect people no matter where you are</p>
-                <Link href="/login">JOIN US!</Link>
+                <Link to={"/login"}>JOIN US!</Link>
             </div>
             <img src={Banner} alt="Gambar" className="img-banner" />
         </div>
