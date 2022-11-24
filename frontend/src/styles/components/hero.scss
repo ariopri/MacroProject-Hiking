@@ -1,0 +1,44 @@
+// Styles
+
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    background-color: #fef9e2;
+    margin-top: -65px;
+  
+    .banner-text {
+      width: 50%;
+      margin: auto;
+      padding-left: 5rem;
+      h2 {
+        line-height: 1;
+      }
+      p {
+        line-height: 1;
+        margin-top: 1em;
+      }
+      a {
+        margin-top: 1em;
+        display: inline-block;
+        color: black;
+        background-color: #1bb291;
+        border-radius: 2em;
+        padding: 0.5em 2em;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: 0.5s;
+  
+        &:hover {
+          color: #393c43;
+          border: 1px solid #393c43;
+          background-color: transparent;
+        }
+      }
+    }
+  
+    .img-banner {
+      width: 50%;
+    }
+  }
