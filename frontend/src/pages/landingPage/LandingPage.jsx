@@ -2,6 +2,7 @@ import Sigambar1 from "../../assets/gambar1.png";
 import Sigambar2 from "../../assets/gambar2.png";
 import Sigambar3 from "../../assets/gambar3.svg";
 import Sigambar4 from "../../assets/gambar4.svg";
+import Footer from "../../components/footer/Footer";
 import Hero from "../../components/hero/Hero";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import '../../styles/pages/landingPage.scss'
@@ -92,7 +93,7 @@ const LandingPage = () => {
                     <a href="/tips">See More Tips Here!</a>
                 </div>
             </section>
-
+            <Footer />
         </>
     );
 };
