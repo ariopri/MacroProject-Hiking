@@ -25,7 +25,7 @@ const NavigationBar = () => {
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to={"/dashboard"}>
+                <Link className="nav-link active" aria-current="page" to={"/"}>
                   Home
                 </Link>
               </li>
