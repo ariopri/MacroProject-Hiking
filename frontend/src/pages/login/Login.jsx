@@ -10,11 +10,21 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LockClockOutlined } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useLoginState from "../../store/todoLogin";
+import axios from "axios";
+import { LOGIN_AUTH } from "../../constant/api";
+import { Toast } from '../../components/reusable/Toast'
+
 
 const Login = () => {
+
+    const { isLoggedIn, setIsLoggedIn, setLoggedAs, setUserId } = useLoginState();
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const [values, setValues] = useState({
         email: "",
@@ -29,6 +39,47 @@ const Login = () => {
         });
     };
 
+    const HandleSubmit = async (e) => {
+        e.preventDefault();
+
+        const user = {
+            email,
+            password,
+        };
+        await axios.post(
+            LOGIN_AUTH, user, {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => {
+                setUserId(response.data.user.id);
+                setIsLoggedIn(true);
+                setLoggedAs(response.data.user.role);
+                localStorage.setItem("tokenId", response.data.tokenId);
+            })
+            .catch((err) => {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Something Went Wrong'
+                })
+            });
+    };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            Toast.fire({
+                icon: 'success',
+                title: 'Login Successful'
+            })
+            navigate("/dashboard");
+        }
+    }, [isLoggedIn, navigate]);
+
+
+
+
     return (
         <div>
             <Container style={{ width: "500px" }} >
@@ -41,7 +92,7 @@ const Login = () => {
                 >
 
                     <Paper elelvation={2} sx={{ padding: 5 }}>
-                        <form >
+                        <form onSubmit={(e) => HandleSubmit(e)} >
                             <Grid container direction="column" spacing={2}>
                                 <Avatar style={{
                                     // position: "absolute",
@@ -67,6 +118,7 @@ const Login = () => {
                                         placeholder="Email Address"
                                         variant="outlined"
                                         required
+                                        onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </Grid>
 
@@ -78,6 +130,7 @@ const Login = () => {
                                         placeholder="Password"
                                         variant="outlined"
                                         required
+                                        onChange={(e) => setPassword(e.target.value)}
                                         InputProps={{
                                             endAdornment: (
                                                 <InputAdornment position="end">
