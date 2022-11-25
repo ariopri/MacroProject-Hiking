@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-export default function BasicTextFields() {
+export default function BasicTextFields(props) {
     return (
         <Box
             component="form"
@@ -27,7 +27,7 @@ export default function BasicTextFields() {
     );
 }
 
-export function InputAdornments() {
+export function InputAdornments(props) {
     const [values, setValues] = React.useState({
         amount: '',
         password: '',
