@@ -8,7 +8,7 @@ const Protected = () => {
         auth.token ? <Outlet /> : (Toast.fire({
             icon: 'error',
             title: 'You must be logged in to view this page'
-        })) && <Navigate to="/" />
+        })) && <Navigate to="/login" />
     )
 }
 
