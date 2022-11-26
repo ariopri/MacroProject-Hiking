@@ -1,4 +1,4 @@
-export const BASE_URL = "http://loca            
+export const BASE_URL = "http://localhost:8080";         
 
 
 // CLIENT SIDE
