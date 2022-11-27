@@ -1,5 +1,6 @@
 
 <!-- PROJECT LOGO -->
+<h1 align="center">Hiking<h1>
 <br />
 <p align="center">
   <a href="https://github.com/ariopri/MacroProject-Hiking">
@@ -12,9 +13,6 @@ that nature should connect people no matter where you are
 
   <p align="center">
     <strong>Hiking</strong> is a cross-device and multi-platform web application that is useful for climbers in choosing the desired mountain by displaying conditions about the mountain, equipment to bring, and so on. Let's use  to get information about mountain in Indonesia. Join us now!
-
-    <br />
-    <br />
 </p>
 
 ##### See here for the results
